@@ -76,6 +76,7 @@
             if (password.Any(char.IsLower)) score++;
             if (password.Any(char.IsUpper)) score++;
             if (password.Any(char.IsDigit)) score++;
+            if (password.Any(ch => !char.IsLetterOrDigit(ch))) score ++;
 
             // 3. Determine strength label
             switch (score)
